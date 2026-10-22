@@ -1,5 +1,22 @@
 import java.util.*;
 public class tree {
+    static void levelOrder(Node root){
+        if(root==null){
+            return;
+        }
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node curr=q.poll();
+            System.out.print(curr.data+" ");
+            if(curr.left!=null){
+                q.add(curr.left);
+            }
+            if(curr.right!=null){
+                q.add(curr.right);
+            }
+        }
+    }
     public static void main(String[] args) {
         Node root=new Node(1);
         root.left=new Node(2);
@@ -9,6 +26,7 @@ public class tree {
 
 
         // level order traversal by queue
+        levelOrder(root);
         
     }
     
