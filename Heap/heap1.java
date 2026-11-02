@@ -1,5 +1,6 @@
 package Data_Structure_Algorithms.Heap;
-
+// leetcode 1046
+// leetcode  621
 public class heap1{
     import java.util.*;
 
