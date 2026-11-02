@@ -52,3 +52,52 @@ class Solution {
     }
 }
 
+class Solution {
+    public boolean checkPath(int V, int[][] edges, int src, int dest) {
+
+        // Step 1: Create adjacency list
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Step 2: Build the graph
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+        }
+
+        // Step 3: Initialize BFS
+        boolean[] visit = new boolean[V];
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(src);
+        visit[src] = true;
+
+        // Step 4: Perform BFS
+        while (!q.isEmpty()) {
+
+            int node = q.poll();
+
+            // Check whether destination is reached
+            if (node == dest) {
+                return true;
+            }
+
+            for (int n : adj.get(node)) {
+
+                if (!visit[n]) {
+                    visit[n] = true;
+                    q.add(n);
+                }
+            }
+        }
+
+        // Step 5: Destination not reachable
+        return false;
+    }
+}
