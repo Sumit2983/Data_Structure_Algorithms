@@ -1,0 +1,2 @@
+// ReorderList
+class ReorderList {static class ListNode{int val;ListNode next;}public void reorderList(ListNode h){if(h==null||h.next==null)return;ListNode s=h,f=h;while(f.next!=null&&f.next.next!=null){s=s.next;f=f.next.next;}ListNode b=rev(s.next);s.next=null;while(b!=null){ListNode n1=h.next,n2=b.next;h.next=b;b.next=n1;h=n1;b=n2;}}private ListNode rev(ListNode h){ListNode p=null;while(h!=null){ListNode n=h.next;h.next=p;p=h;h=n;}return p;}}

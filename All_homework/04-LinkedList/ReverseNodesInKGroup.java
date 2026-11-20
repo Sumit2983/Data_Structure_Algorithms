@@ -1,0 +1,2 @@
+// ReverseNodesInKGroup
+class ReverseNodesInKGroup {static class ListNode{int val;ListNode next;}public ListNode reverseKGroup(ListNode h,int k){ListNode d=new ListNode();d.next=h;ListNode g=d;while(true){ListNode end=g;for(int i=0;i<k&&end!=null;i++)end=end.next;if(end==null)break;ListNode start=g.next,next=end.next,prev=next,cur=start;while(cur!=next){ListNode n=cur.next;cur.next=prev;prev=cur;cur=n;}g.next=end;g=start;}return d.next;}}

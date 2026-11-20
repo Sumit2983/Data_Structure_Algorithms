@@ -1,0 +1,2 @@
+// SumNodesOnLongestPath
+class SumNodesOnLongestPath { static class TreeNode{int val;TreeNode left,right;TreeNode(int v){val=v;}} int bestLen,bestSum;public int sumLongestPath(TreeNode r){bestLen=-1;bestSum=0;dfs(r,0,0);return bestSum;}private void dfs(TreeNode n,int len,int sum){if(n==null)return;len++;sum+=n.val;if(n.left==null&&n.right==null){if(len>bestLen||(len==bestLen&&sum>bestSum)){bestLen=len;bestSum=sum;}return;}dfs(n.left,len,sum);dfs(n.right,len,sum);} }

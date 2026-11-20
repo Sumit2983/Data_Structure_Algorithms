@@ -1,0 +1,2 @@
+// PalindromeLinkedList
+class PalindromeLinkedList {static class ListNode{int val;ListNode next;}public boolean isPalindrome(ListNode h){if(h==null||h.next==null)return true;ListNode s=h,f=h;while(f.next!=null&&f.next.next!=null){s=s.next;f=f.next.next;}ListNode second=rev(s.next),a=h,b=second;while(b!=null){if(a.val!=b.val)return false;a=a.next;b=b.next;}s.next=rev(second);return true;}private ListNode rev(ListNode h){ListNode p=null;while(h!=null){ListNode n=h.next;h.next=p;p=h;h=n;}return p;}}

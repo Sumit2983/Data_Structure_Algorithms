@@ -1,0 +1,2 @@
+// StackImplementationUsingArray
+class StackImplementationUsingArray {private int[]a=new int[8];private int top=-1;public void push(int x){if(top+1==a.length)a=java.util.Arrays.copyOf(a,a.length*2);a[++top]=x;}public int pop(){if(top<0)throw new IllegalStateException("empty");return a[top--];}public int peek(){if(top<0)throw new IllegalStateException("empty");return a[top];}public boolean isEmpty(){return top==-1;}}
